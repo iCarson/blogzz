@@ -17,19 +17,19 @@ menu:
 
 # Favicon
 # ---------------
-favicon: /images/favicon.ico
+favicon: /img/favicon.ico
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
   enable: true
-  manifest: /images/pwa/manifest.json
+  manifest: /img/pwa/manifest.json
   theme_color: "#fff"
-  apple_touch_icon: /images/pwa/apple-touch-icon.png
-  favicon_32_32: /images/pwa/32.png
-  favicon_16_16: /images/pwa/16.png
-  mask_icon: /images/pwa/safari-pinned-tab.svg
+  apple_touch_icon: /img/pwa/apple-touch-icon.png
+  favicon_32_32: /img/pwa/32.png
+  favicon_16_16: /img/pwa/16.png
+  mask_icon: /img/pwa/safari-pinned-tab.svg
 
 # Highlight theme
 # ---------------
@@ -148,8 +148,8 @@ movies_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/movie.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
-  flink: /images/friend_404.gif
-  post_page: /images/404.jpg
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
 
 post_meta:
   date_type: both # or created or updated 文章日期是创建日或者更新日或都显示
@@ -234,7 +234,7 @@ valine:
   lang: zh-cn # i18n: zh-cn/en
   placeholder: Please leave your footprints # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
-  bg: /images/comment_bg.png # valine background
+  bg: /img/comment_bg.png # valine background
 
 #####     Footer Settings    ####
 # ------------------------------------
@@ -283,10 +283,10 @@ reward:
   enable: false
   QR_code:
     - itemlist:
-        img: /images/wechat.jpg
+        img: /img/wechat.jpg
         text: 微信
     - itemlist:
-        img: /images/alipay.jpg
+        img: /img/alipay.jpg
         text: 支付寶
 
 # 推薦文章
