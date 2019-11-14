@@ -6,8 +6,6 @@ cache: npm
 branches:
   only:
     - blog-source # build blog-source branch only
-install:
-  - npm install
 script:
   - hexo generate # generate static files
 deploy:
