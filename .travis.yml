@@ -6,8 +6,28 @@ cache: npm
 branches:
   only:
     - blog-source # build blog-source branch only
+install:
+  - npm install
 script:
   - hexo generate # generate static files
+  
+# 将静态资源推送到 master 分支上
+after_script:
+  # 找到静态资源
+  - cd ./public
+  - git init
+  # user.name 和 user.email 让 travis 能登录你的 github
+  - git config user.name "icarson"
+  - git config user.email "chenmingjia13@gmail.com"
+  - git add .
+  - git commit -m "docs:update articles"
+  # GH_TOKEN 为你的 github 允许 travis 访问生成的凭证
+  # GH_REF 告诉 travis 往哪个仓库推送代码，具体值下面配置
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+env:
+  global:
+    # 定义往哪个仓库推送代码，注意事项见下面
+    - GH_REF: github.com/iCarson/icarson.github.io.git
 deploy:
   provider: pages
   skip-cleanup: true
