@@ -9,6 +9,7 @@ branches:
 install:
   - npm install
 script:
+  - hexo clean # generate static files
   - hexo generate # generate static files
   
 # 将静态资源推送到 master 分支上
