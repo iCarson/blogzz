@@ -22,19 +22,19 @@ favicon: /images/favicon.ico
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
-# pwa:
-#   enable: true
-#   manifest: /img/pwa/manifest.json
-#   theme_color: "#fff"
-#   apple_touch_icon: /img/pwa/apple-touch-icon.png
-#   favicon_32_32: /img/pwa/32.png
-#   favicon_16_16: /img/pwa/16.png
-#   mask_icon: /img/pwa/safari-pinned-tab.svg
+pwa:
+  enable: true
+  manifest: /images/pwa/manifest.json
+  theme_color: "#fff"
+  apple_touch_icon: /images/pwa/apple-touch-icon.png
+  favicon_32_32: /images/pwa/32.png
+  favicon_16_16: /images/pwa/16.png
+  mask_icon: /images/pwa/safari-pinned-tab.svg
 
 # Highlight theme
 # ---------------
 highlight_theme: light
-highlight_copy: false #代碼複製按鈕
+highlight_copy: true #代碼複製按鈕
 highlight_lang: true #代碼語言顯示
 highlight_shrink: false #代碼框不展開，需點擊 '>' 打開
 
@@ -52,15 +52,30 @@ copy:
 #   icon: link
 # ---------------
 social:
-  fa fa-github: https://github.com/jerryc127
-  fa fa-envelope: mailto:xxxxxxxx@gmail.com
+  fa fa-github: https://github.com/icarson
+  fa fa-envelope: mailto:chenmingjia13@gmail.com
   fa fa-rss: /atom.xml
 
 ####    search    ####
 # Algolia search
 # ---------------
+algolia:
+  appId: "7BZWISTQGT"
+  apiKey: "7e4599e7e0e744de201b4052878b2a15"
+  adminApiKey: "f2cbd5b8e1a25f65968e0dd08e2cba2d"
+  chunkSize: 5000
+  indexName: "carson"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
 
@@ -88,14 +103,16 @@ mathjax:
 # ---------------
 katex:
   enable: false
+  cdn:
+    css: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
   hide_scrollbar: true
 
 ####   Analysis    ####
 # ---------------
-# baidu_analytics:
+baidu_analytics: 531511fee4187f1c3a131bcb5021f044
 
 #Google Analytics
-google_analytics:
+google_analytics: 152515169-1
 
 
 # Post info settings
@@ -131,8 +148,8 @@ movies_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/movie.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: /images/friend_404.gif
+  post_page: /images/404.jpg
 
 post_meta:
   date_type: both # or created or updated 文章日期是创建日或者更新日或都显示
@@ -141,7 +158,7 @@ post_meta:
 
 # Please see doc for more details: https://jerryc.me/posts/21cfbf15/#字数统计
 wordcount:
-  enable: false
+  enable: true
 
 toc:
   enable: true
@@ -207,21 +224,21 @@ disqus:
 
 # valine comment system. https://valine.js.org
 valine:
-  enable: false # if you want use valine,please set this value is true
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
+  enable: true # if you want use valine,please set this value is true
+  appId: RjWrv3GFAibyP9NGTf6u6Dx6-gzGzoHsz # leancloud application app id
+  appKey: aTfVoRvLCjSajQc6pz4tql4b # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
   verify: false # valine verify code (true/false)
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  lang: en # i18n: zh-cn/en
+  lang: zh-cn # i18n: zh-cn/en
   placeholder: Please leave your footprints # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
-  bg: /img/comment_bg.png # valine background
+  bg: /images/comment_bg.png # valine background
 
 #####     Footer Settings    ####
 # ------------------------------------
-since: 2018
+since: 2019
 
 footer_custom_text:
 
@@ -232,12 +249,12 @@ ICP:
   enable: false
   url:
   text:
-  icon: /img/icp.png
+  icon: 
 
 ####    站長驗證    ####
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification:
+google_site_verification: nG5A6PKO6gOSVgkyDVdi8J6Ms3qUGLtYTPr3xTAynQs
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
@@ -245,7 +262,7 @@ bing_site_verification:
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
-baidu_site_verification:
+baidu_site_verification: wL0xMeN4Cy
 
 # 360 Webmaster tools verification setting
 # see http://zhanzhang.so.com/
@@ -253,23 +270,23 @@ qihu_site_verification:
 
 # 友情鏈接界面設置
 Flink:
-  headline: 友情鏈接
-  info_headline: 我的Blog資料
-  name: Blog 名字： JerryC
-  address: Blog 地址： https://jerryc.me/
-  avatar: Blog 頭像： https://jerryc.me/img/avatar.png
-  info: Blog 簡介： 今日事,今日畢
-  comment: 如果需要交換友鏈,請留言
+  headline: 友情链接
+  info_headline: 我的Blog资料
+  name: Blog 名字： Carson
+  address: Blog 地址： https://icarson.github.io/
+  avatar: Blog 头像： hhttps://icarson.github.io/img/avatar.png
+  info: Blog 简介： 今日事,今日毕
+  comment: 如果需要交换友链,请留言
 
 # 打賞按鈕
 reward:
-  enable: true
+  enable: false
   QR_code:
     - itemlist:
-        img: /img/wechat.jpg
+        img: /images/wechat.jpg
         text: 微信
     - itemlist:
-        img: /img/alipay.jpg
+        img: /images/alipay.jpg
         text: 支付寶
 
 # 推薦文章
@@ -337,7 +354,7 @@ canvas_ribbon_piao:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
@@ -377,7 +394,7 @@ ClickShowText:
   fontSize: 15px
 
 # 頭像會一直轉圈
-avatar_effect: false
+avatar_effect: true
 
 # 網站顯示模式
 # light 默認模式
@@ -386,13 +403,13 @@ display_mode: light
 
 # 美化post頁顯示
 post_beautify:
-  enable: false
+  enable: true
   title-prefix-icon: '\f0c1'
   title-prefix-icon-color: "#F47466"
 
 # 全局字體
 font:
-  enable: false
+  enable: true
   font-family: Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, MicrMicrosoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif
   code-font: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
 
@@ -455,7 +472,7 @@ busuanzi:
 # 也可以寫成 年/月/日 時間
 runtimeshow:
   enable: true
-  start_date: 6/7/2018 00:00:00
+  start_date: 11/14/2019 00:00:00
 
 ####   右下角按鈕  ####
 #----------------------------------------------
@@ -463,13 +480,13 @@ runtimeshow:
 translate:
   enable: true
   # 默認按鈕顯示文字
-  default: 繁
+  default: 简
   #网站默认语言，1: 繁體中文, 2: 简体中文
-  defaultEncoding: 2
+  defaultEncoding: 1
   #延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
   translateDelay: 0
   #博客网址
-  cookieDomain: "https://xxx/"
+  cookieDomain: "https://icarson.github.io/"
   #當文字是簡體時，按鈕顯示的文字
   msgToTraditionalChinese: "繁"
   #當文字是繁體時，按鈕顯示的文字
@@ -496,14 +513,14 @@ autoChangeMode: false
 # 默認為 fancybox http://fancyapps.com/fancybox/3/
 # 可以選擇改爲 medium_zoom https://github.com/francoischalifour/medium-zoom
 medium_zoom:
-  enable: false
+  enable: true
 
 # Snackbar 彈窗
 # https://github.com/polonel/SnackBar
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   bg_light: '#49b1f5' #light mode時彈窗背景
   bg_dark: '#2d3035' #dark mode時彈窗背景
